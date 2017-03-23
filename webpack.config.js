@@ -9,28 +9,42 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
+  devtool: 'source-map',
   entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'www'),
     filename: 'js/[name].[hash].js'
   },
   module: {
-    rules: [{
-      test: /\.scss$/,
-      use: extractSass.extract({
-        use: [{
-          loader: "css-loader"
-        }, {
-          loader: "sass-loader"
-        }],
-        // use style-loader in development
-        fallback: "style-loader"
-      })
-    },
-    {
-      test: /\.(png|gif|jp(e)?g)$/,
-      loader: 'url-loader?limit=8192&name=./img/[name].[hash].[ext]'
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env'],
+            plugins: [require('babel-plugin-transform-class-properties')]
+          }
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: extractSass.extract({
+          use: [{
+            loader: "css-loader"
+          }, {
+            loader: "sass-loader"
+          }],
+          // use style-loader in development
+          fallback: "style-loader"
+        })
+      },
+      {
+        test: /\.(png|gif|jp(e)?g)$/,
+        loader: 'url-loader?limit=8192&name=./img/[name].[hash].[ext]'
+      }
+    ]
   },
   plugins: [
     extractSass,

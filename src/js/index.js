@@ -1,2 +1,3 @@
-require('../css/index.scss')
-console.log('hello')
+import app from './app';
+
+document.addEventListener("deviceready", () => app.ready(), false);
