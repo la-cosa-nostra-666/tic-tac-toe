@@ -34,11 +34,17 @@ module.exports = {
           use: [{
             loader: "css-loader"
           }, {
-            loader: "sass-loader"
+            loader: 'resolve-url-loader'
+          }, {
+            loader: "sass-loader?sourceMap"
           }],
           // use style-loader in development
           fallback: "style-loader"
         })
+      },
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader: 'file-loader?name=./font/[name].[hash].[ext]'
       },
       {
         test: /\.(png|gif|jp(e)?g)$/,
