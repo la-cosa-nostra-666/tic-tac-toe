@@ -2,8 +2,16 @@
 
 # Contribution
 
-## Install
+## Installation
 
-`git clone git@github.com:la-cosa-nostra-666/tic-tac-toe.git`
+```bash
+git clone git@github.com:la-cosa-nostra-666/tic-tac-toe.git
+cd tic-tac-toe
+npm install
+```
 
-`phonegap serve`
+## Run
+
+```
+npm start
+```
