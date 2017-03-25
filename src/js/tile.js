@@ -4,10 +4,10 @@ import EventEmitter from 'events';
 export default class Tile extends EventEmitter {
   container = document.createElement('div');
   playerContainer = document.createElement('div');
-  constructor(withoutBorders) {
+  constructor(additionalClassArray) {
     super()
     this.container.classList.add('tile');
-    this.container.classList.add.apply(this.container.classList, withoutBorders);
+    this.container.classList.add.apply(this.container.classList, additionalClassArray);
     this.container.appendChild(this.playerContainer)
     this.playerContainer.classList.add('player')
     this.container.addEventListener('click', () => this.emit('click'));
