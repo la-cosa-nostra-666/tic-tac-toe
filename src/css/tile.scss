@@ -3,10 +3,11 @@
 .tile {
   display: inline-block;
   width: calc(100% / 3);
-  height: calc(100% / 3);
+  height: 100%;
   border: 3px solid white;
   box-sizing: border-box;
   position: relative;
+  float: left;
 
   .player {
     display: inline-block;
@@ -32,5 +33,5 @@
   &.without-bottom {
     border-bottom: 0;
   }
-  
+
 }

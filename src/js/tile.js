@@ -13,12 +13,13 @@ export default class Tile extends EventEmitter {
     this.container.addEventListener('click', () => this.emit('click'));
   }
   setPlayer(player) {
-    if (!(player === 'o' || player === 'x')) {
+    if (!(player === 'o' || player === 'x' || player === '')) {
       return console.error(`wrong player ${player}`);
     }
     let classMap = {
       'o': 'fa-circle-o',
-      'x': 'fa-times'
+      'x': 'fa-times',
+      '': ''
     }
     this.playerContainer.classList.remove('fa-circle-o', 'fa-times');
     this.playerContainer.classList.add('fa', classMap[player]);

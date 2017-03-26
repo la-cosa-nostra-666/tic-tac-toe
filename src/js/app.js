@@ -1,16 +1,13 @@
 import '../css/index.scss';
 import Header from './header';
-import Tile from './tile';
+import Board from './board';
 
 export default {
   ready: () => {
     const header = new Header();
     document.body.appendChild(header.container);
-    const tile = new Tile(['without-bottom']);
-    document.body.appendChild(tile.container);
-    tile.on('click', () => {
-      tile.setPlayer('x');
-    })
+    const board = new Board();
+    document.body.appendChild(board.container);
     header.setCurrentPlayer('ali')
   }
 }
