@@ -5,13 +5,6 @@ import '../css/board.scss';
 import memory from './memory';
 import Tile from './tile';
 
-export function chunk(array, chunkSize) {
-  const chunks = [];
-  for (var index = 0; index < array.size; index += chunkSize) {
-    chunks.push(array.slice(index, index + chunkSize));
-  }
-  return chunks;
-}
 export default class Board extends EventEmitter {
   container = document.createElement('div');
   size = 0;

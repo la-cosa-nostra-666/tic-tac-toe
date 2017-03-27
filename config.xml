@@ -93,4 +93,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="~6.0.0" />
+    <preference name="fullscreen" value="true" />
+    <preference name="orientation" value="portrait" />
 </widget>
