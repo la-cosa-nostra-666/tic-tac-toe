@@ -1,7 +1,15 @@
 import '../css/board.scss';
+import memory from './memory'
 
-import Tile from './tile.js';
+import Tile from './tile';
 
+export function chunk(array, chunkSize) {
+  const chunks = [];
+  for (var index = 0; index < array.size; index += chunkSize) {
+    chunks.push(array.slice(index, index + chunkSize));
+  }
+  return chunks;
+}
 export default class Board {
   container = document.createElement('div');
   size = 0;
@@ -19,11 +27,16 @@ export default class Board {
       row.forEach((tile) => rowElement.appendChild(tile.container) );
       this.container.appendChild(rowElement);
     })
-    this.tiles.forEach((tile) => {
+    this.tiles.forEach((tile, index) => {
       tile.on('click', () => {
-        tile.state = tile.state == '' ? 'o' : tile.state == 'o' ? 'x' : '';
+        if (tile.state !== '') {
+          return;
+        }
+        tile.state = memory.player;
+        memory.updateTile(index)
       })
     })
+    memory.tiles.forEach((tileState, index) => this.tiles[index].state = tileState);
   }
   restyle() {
     this.container.style.width = `${this.size}px`;
