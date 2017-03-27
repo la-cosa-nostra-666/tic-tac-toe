@@ -9,16 +9,25 @@ export default class Board {
     [new Tile(), new Tile(), new Tile()],
     [new Tile(), new Tile(), new Tile()]
   ];
+  tiles = this.board.reduce((array, row) => array.concat(row), []);
   constructor() {
-    let size = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
     this.container.classList.add('board');
-    this.container.style.width = `${size}px`;
-    this.container.style.height = `${size}px`;
     this.board.forEach((row) => {
       let rowElement = document.createElement('div');
       rowElement.classList.add('row');
       row.forEach((tile) => rowElement.appendChild(tile.container) );
       this.container.appendChild(rowElement);
     })
+    this.tiles.forEach((tile) => {
+      tile.on('click', () => {
+        tile.state = tile.state == '' ? 'o' : tile.state == 'o' ? 'x' : '';
+      })
+    })
+  }
+  restyle() {
+    let size = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
+    this.container.style.width = `${size}px`;
+    this.container.style.height = `${size}px`;
+    this.tiles.forEach(tile => tile.restyle())
   }
 }

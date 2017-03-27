@@ -2,12 +2,12 @@ import '../css/index.scss';
 import Header from './header';
 import Board from './board';
 
-export default {
-  ready: () => {
-    const header = new Header();
-    document.body.appendChild(header.container);
-    const board = new Board();
-    document.body.appendChild(board.container);
-    header.setCurrentPlayer('ali')
+export default class App {
+  board = new Board();
+  constructor() {
+    document.body.appendChild(this.board.container);
+  }
+  restyle() {
+    this.board.restyle();
   }
 }
