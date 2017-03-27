@@ -56,6 +56,7 @@ export default class App {
   }
   restyle() {
     this.board.size = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
+    this.board.size = this.board.size - 40; // margin
     if (Math.abs(this.board.size - window.innerHeight) / 2 < 60) {
       this.board.size = this.board.size - 120;
     }
