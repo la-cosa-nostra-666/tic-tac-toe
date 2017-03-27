@@ -25,6 +25,7 @@ export default class App {
         }, 5000)
       }
     })
+    this.board.emit('changed');
   }
   checkWinner() {
     const states = this.board.tiles.map((tile) => tile.state);
