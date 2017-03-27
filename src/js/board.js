@@ -4,6 +4,7 @@ import Tile from './tile.js';
 
 export default class Board {
   container = document.createElement('div');
+  size = 0;
   board = [
     [new Tile(), new Tile(), new Tile()],
     [new Tile(), new Tile(), new Tile()],
@@ -25,9 +26,8 @@ export default class Board {
     })
   }
   restyle() {
-    let size = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
-    this.container.style.width = `${size}px`;
-    this.container.style.height = `${size}px`;
+    this.container.style.width = `${this.size}px`;
+    this.container.style.height = `${this.size}px`;
     this.tiles.forEach(tile => tile.restyle())
   }
 }

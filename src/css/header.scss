@@ -1,0 +1,19 @@
+.header {
+  position: relative;
+
+  .text {
+    color: white;
+    font-size: 29px;
+    padding: 0 10px 0 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  .state {
+    color: white;
+    font-size: 45px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}

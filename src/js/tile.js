@@ -10,8 +10,7 @@ export default class Tile extends EventEmitter {
     this.container.classList.add('tile');
     this.container.classList.add.apply(this.container.classList, additionalClassArray);
     this.container.appendChild(this.stateContainer);
-    this.stateContainer.classList.add('player');
-
+    this.stateContainer.classList.add('state');
     this.container.addEventListener('click', () => this.emit('click'));
   }
   set state(state) {
