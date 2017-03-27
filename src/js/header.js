@@ -1,5 +1,7 @@
 import '../css/header.scss';
 
+import memory from './memory';
+
 export default class Header {
   container = document.createElement('div');
   textContainer = document.createElement('span');
@@ -13,7 +15,10 @@ export default class Header {
     this.container.appendChild(this.textContainer);
     this.container.appendChild(this.stateContainer);
     this.textContainer.innerHTML = 'Player now:';
-    this.state = 'o';
+    this.state = memory.player;
+    memory.on('player', () => {
+      this.state = memory.player;
+    })
   }
   set state(state) {
     this._state = state;
@@ -24,7 +29,6 @@ export default class Header {
     }
     this.stateContainer.classList.remove('fa-circle-o', 'fa-times');
     this.stateContainer.classList.add('fa', classMap[state]);
-    console.log(`player now ${state}`);
   }
   restyle() {
     this.container.style.height = `${this.height}px`;
