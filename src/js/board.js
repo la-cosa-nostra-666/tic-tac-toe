@@ -16,9 +16,9 @@ export default class Board extends EventEmitter {
   container = document.createElement('div');
   size = 0;
   board = [
-    [new Tile(), new Tile(), new Tile()],
-    [new Tile(), new Tile(), new Tile()],
-    [new Tile(), new Tile(), new Tile()]
+    [new Tile(['without-left', 'without-top']), new Tile(['without-top']), new Tile(['without-top', 'without-right'])],
+    [new Tile(['without-left']), new Tile(), new Tile(['without-right'])],
+    [new Tile(['without-left', 'without-bottom']), new Tile(['without-bottom']), new Tile(['without-bottom', 'without-right'])]
   ];
   tiles = this.board.reduce((array, row) => array.concat(row), []);
   constructor() {

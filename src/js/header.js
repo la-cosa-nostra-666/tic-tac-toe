@@ -23,12 +23,12 @@ export default class Header {
   set state(state) {
     this._state = state;
     let classMap = {
-      'o': 'fa-circle-o',
-      'x': 'fa-times',
+      'o': 'o',
+      'x': 'x',
       '': 'empty'
     }
-    this.stateContainer.classList.remove('fa-circle-o', 'fa-times');
-    this.stateContainer.classList.add('fa', classMap[state]);
+    this.stateContainer.classList.remove('o', 'x');
+    this.stateContainer.classList.add(classMap[state]);
   }
   restyle() {
     this.container.style.height = `${this.height}px`;

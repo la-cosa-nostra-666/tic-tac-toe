@@ -8,17 +8,17 @@
   box-sizing: border-box;
   position: relative;
   float: left;
+  background-size: 100%;
 
-  .state {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+  &.o {
+    background-image: url('../img/o.svg');
   }
 
-  &.wihout-left {
+  &.x {
+    background-image: url('../img/x.svg');
+  }
+
+  &.without-left {
     border-left: 0;
   }
 
@@ -26,7 +26,7 @@
     border-right: 0;
   }
 
-  &.withou-top {
+  &.without-top {
     border-top: 0;
   }
 
