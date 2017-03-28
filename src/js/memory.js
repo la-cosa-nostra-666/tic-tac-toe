@@ -3,12 +3,12 @@ import EventEmitter from 'events';
 class Memory extends EventEmitter {
   _player = window.localStorage.getItem('player') || 'o';
   _tiles = JSON.parse(window.localStorage.getItem('tiles')) ||  [
-                                                                  '', '', '',
-                                                                  '', '', '',
-                                                                  '', '', ''
-                                                                ];
+    '', '', '',
+    '', '', '',
+    '', '', ''
+  ];
   constructor() {
-    super()
+    super();
   }
   get tiles() {
     return this._tiles;
@@ -30,7 +30,7 @@ class Memory extends EventEmitter {
       '', '', ''
     ];
     this._tiles.forEach((state, index) => this.emit('tile', state, index));
-    this._player = 'o'
+    this._player = 'o';
     this.emit('player', this._player);
     this._saveStates();
   }

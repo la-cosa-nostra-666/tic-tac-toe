@@ -22,7 +22,7 @@ export default class Board extends EventEmitter {
       rowElement.classList.add('row');
       row.forEach((tile) => rowElement.appendChild(tile.container) );
       this.container.appendChild(rowElement);
-    })
+    });
     memory.tiles.forEach((tileState, index) => this.tiles[index].state = tileState);
     this.tiles.forEach((tile, index) => {
       tile.on('click', () => {
@@ -31,15 +31,15 @@ export default class Board extends EventEmitter {
         }
         memory.updateTile(index);
         this.emit('changed');
-      })
-    })
+      });
+    });
     memory.on('tile', (state, index) => {
       this.tiles[index].state = state;
-    })
+    });
   }
   restyle() {
     this.container.style.width = `${this.size}px`;
     this.container.style.height = `${this.size}px`;
-    this.tiles.forEach(tile => tile.restyle())
+    this.tiles.forEach(tile => tile.restyle());
   }
 }

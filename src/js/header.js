@@ -18,7 +18,7 @@ export default class Header {
     this.state = memory.player;
     memory.on('player', () => {
       this.state = memory.player;
-    })
+    });
   }
   set state(state) {
     this._state = state;
@@ -26,7 +26,7 @@ export default class Header {
       'o': 'o',
       'x': 'x',
       '': 'empty'
-    }
+    };
     this.stateContainer.classList.remove('o', 'x');
     this.stateContainer.classList.add(classMap[state]);
   }

@@ -19,7 +19,7 @@ export default class GameView extends View {
         memory.clean();
         this.emit('gameEnd', winner);
       }
-    })
+    });
     this.board.emit('changed');
   }
   checkWinner() {
@@ -35,7 +35,7 @@ export default class GameView extends View {
              t[2] && t[5] && t[8] || // column three
 
              t[0] && t[4] && t[8] || // diagonal one
-             t[2] && t[4] && t[6]    // diagonal two
+             t[2] && t[4] && t[6];    // diagonal two
     }
     function filled(states) {
       return states.every((state) => state !== '');
