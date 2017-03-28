@@ -20,13 +20,18 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env'],
-            plugins: [require('babel-plugin-transform-class-properties')]
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env'],
+              plugins: [require('babel-plugin-transform-class-properties')]
+            }
+          },
+          {
+            loader: 'eslint-loader'
           }
-        }
+        ]
       },
       {
         test: /\.scss$/,
