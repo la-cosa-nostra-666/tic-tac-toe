@@ -13,7 +13,5 @@ export default class View extends EventEmitter {
   show() {
     this.toggle(false);
   }
-  restyle() {
-
-  }
+  restyle() {}
 }

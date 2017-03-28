@@ -7,7 +7,6 @@ const extractSass = new ExtractTextPlugin({
 });
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
   devtool: 'source-map',
   entry: './src/js/index.js',
