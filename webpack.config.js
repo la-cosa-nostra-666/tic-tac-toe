@@ -66,7 +66,8 @@ module.exports = {
         template: './src/index.html'
     }),
     new CopyWebpackPlugin([
-      { from: './src/res', to: 'res'}
+      { from: './src/res', to: 'res' },
+      { from: './src/config.xml', to: 'config.xml' }
     ])
   ]
 }
