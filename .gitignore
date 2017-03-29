@@ -11,6 +11,7 @@ npm-debug.log
 
 # res
 resources/signing
+res
 
 # build
 www
