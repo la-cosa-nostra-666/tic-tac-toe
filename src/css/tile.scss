@@ -9,6 +9,9 @@
   position: relative;
   float: left;
   background-size: 100%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
 
   &.o {
     background-image: url('../img/o.svg');

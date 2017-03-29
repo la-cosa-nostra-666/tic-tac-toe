@@ -1,22 +1,25 @@
 import View from './view';
 import Header from './header';
 import Board from './board';
+import History from './history';
 import memory from './memory';
 
 export default class GameView extends View {
   container = document.createElement('div');
   board = new Board();
   header = new Header();
-
+  history = new History();
   constructor() {
     super();
     this.container.classList.add('game-view');
     this.container.appendChild(this.header.container);
     this.container.appendChild(this.board.container);
+    this.container.appendChild(this.history.container);
     this.board.on('changed', () => {
       const winner = this.checkWinner();
       if (winner) {
         memory.clean();
+        memory.history = winner;
         this.emit('gameEnd', winner);
       }
     });
@@ -51,15 +54,17 @@ export default class GameView extends View {
     }
   }
   restyle() {
-    this.board.size = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
-    this.board.size = this.board.size - 40; // margin
-    if (Math.abs(this.board.size - window.innerHeight) / 2 < 60) {
-      this.board.size = this.board.size - 120;
+    let size = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
+    size = size - 40; // margin
+    if (Math.abs(size - window.innerHeight) / 2 < 60) {
+      size = size - 120;
     }
+    this.board.size = size;
     this.board.restyle();
     const topSpace = this.board.container.getBoundingClientRect().top;
     this.header.height = topSpace;
     this.header.restyle();
+    this.history.height = topSpace;
   }
 
 }
