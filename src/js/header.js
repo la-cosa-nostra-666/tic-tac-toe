@@ -4,16 +4,19 @@ import memory from './memory';
 
 export default class Header {
   container = document.createElement('div');
+  centerContainer = document.createElement('div');
   textContainer = document.createElement('span');
   stateContainer = document.createElement('span');
   height = 0;
   _state = '';
   constructor() {
     this.container.classList.add('header');
+    this.centerContainer.classList.add('center');
+    this.container.appendChild(this.centerContainer);
     this.textContainer.classList.add('text');
     this.stateContainer.classList.add('state');
-    this.container.appendChild(this.textContainer);
-    this.container.appendChild(this.stateContainer);
+    this.centerContainer.appendChild(this.textContainer);
+    this.centerContainer.appendChild(this.stateContainer);
     this.textContainer.innerHTML = 'Player now:';
     this.state = memory.player;
     memory.on('player', () => {
@@ -32,6 +35,6 @@ export default class Header {
   }
   restyle() {
     this.container.style.height = `${this.height}px`;
-    this.textContainer.style.lineHeight = `${this.height}px`;
+    // this.textContainer.style.lineHeight = `${this.height}px`;
   }
 }
