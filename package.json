@@ -32,7 +32,7 @@
   "scripts": {
     "start": "webpack && phonegap serve & webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -r www && rm -r res && webpack && phonegap prepare && npm run copy:res && phonegap build",
+    "build:android": "rm -r www && rm -r res && NODE_ENV=production webpack && phonegap prepare && npm run copy:res && phonegap build",
     "copy:res": "node ./scripts/copy-res.js"
   },
   "repository": {

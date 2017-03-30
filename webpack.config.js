@@ -46,7 +46,8 @@ module.exports = {
             loader: "sass-loader?sourceMap"
           }],
           // use style-loader in development
-          fallback: "style-loader"
+          fallback: "style-loader",
+          publicPath: '../'
         })
       },
       {
@@ -64,11 +65,6 @@ module.exports = {
     new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './src/index.html'
-    }),
-    new CopyWebpackPlugin([
-      // { from: './src/res', to: 'res' },
-      // { from: './src/config.xml', to: 'config.xml' },
-      // { from: './src/icon.png', to: 'icon.png' }
-    ])
+    })
   ]
 }
