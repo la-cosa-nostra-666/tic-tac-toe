@@ -38,13 +38,20 @@ module.exports = {
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: [{
-            loader: "css-loader"
-          }, {
-            loader: 'resolve-url-loader'
-          }, {
-            loader: "sass-loader?sourceMap"
-          }],
+          use: [
+            {
+              loader: "css-loader"
+            },
+            {
+              loader: 'postcss-loader'
+            },
+            {
+              loader: 'resolve-url-loader'
+            },
+            {
+              loader: "sass-loader?sourceMap"
+            }
+          ],
           // use style-loader in development
           fallback: "style-loader",
           publicPath: '../'
