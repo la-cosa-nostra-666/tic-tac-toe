@@ -1,12 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.tictactoe" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>tic tac toe</name>
+    <name>Tic Tac Toe</name>
     <description>
-        Tic tac toe.
+        Tic Tac Toe.
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+        La cosa nostra
     </author>
+
+
+    <hook type="after_build" src="scripts/copy-res.js" />
+
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
@@ -29,17 +33,17 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <platform name="browser">
-        <!-- <preference name="SplashScreen" value="res/screen/android/drawable-land-ldpi-screen.png" /> -->
-    </platform>
+
+    <!-- <platform name="browser">
+        <preference name="SplashScreen" value="res/screen/android/drawable-land-ldpi-screen.png" />
+    </platform> -->
     <platform name="android">
-        <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
-        <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
-        <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
-        <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
-        <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
-        <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
+        <icon src="resources/android/icon/icon-36-ldpi.png"  density="ldpi" />
+        <icon src="resources/android/icon/icon-48-mdpi.png"  density="mdpi" />
+        <icon src="resources/android/icon/icon-72-hdpi.png"  density="hdpi" />
+        <icon src="resources/android/icon/icon-96-xhdpi.png" density="xhdpi" />
     </platform>
+    <icon src="resources/icon.png" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
