@@ -1,4 +1,6 @@
 import '../css/index.scss';
+
+import 'es6-shim';
 import App from './app';
 
 document.addEventListener('deviceready', () => {
