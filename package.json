@@ -35,7 +35,7 @@
     "start": "webpack && phonegap serve & webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:android": "rm -r www && rm -r res && NODE_ENV=production webpack && phonegap prepare && npm run copy:res && phonegap build android",
-    "copy:res": "node ./scripts/copy-res.js",
+    "copy:res": "node ./scripts/android/copy-res.js",
     "build:android:release": "rm -r www && rm -r res && NODE_ENV=production webpack && phonegap prepare && npm run copy:res && phonegap build android --release"
   },
   "repository": {
