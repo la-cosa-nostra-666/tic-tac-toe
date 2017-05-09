@@ -20,3 +20,9 @@ npm install
 ```
 npm start
 ```
+
+## Signing app
+
+https://developer.android.com/studio/publish/app-signing.html
+
+`npm run build:android:release release-key.jks`
