@@ -6,7 +6,7 @@ const copyRes = require('./copy-res');
 const build = () => {
   return exec('rm', ['-rf', path.resolve('./www')])
   .then(() => exec('rm', ['-rf', path.resolve('./res')]))
-  .then(() => exec('webpack'))
+  .then(() => exec('webpack', ['-p']))
   .then(() => exec('phonegap', ['prepare']))
   .then(() => copyRes())
   .then(() => exec('phonegap', ['build', 'android']))
