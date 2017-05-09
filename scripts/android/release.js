@@ -13,3 +13,4 @@ prepare()
 .then(() => exec('cordova', ['build', 'android', '--release']))
 .then(() => zipalign())
 .then(() => signAPK(process.argv[2]))
+.catch((error) => console.error(error));

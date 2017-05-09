@@ -6,6 +6,7 @@ const prepare = require('./prepare');
 const build = () => {
   return prepare()
   .then(() => exec('cordova', ['build', 'android']))
+  .catch((error) => console.error(error));
 }
 
 if (require.main === module) {
