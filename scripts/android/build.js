@@ -5,7 +5,7 @@ const prepare = require('./prepare');
 
 const build = () => {
   return prepare()
-  .then(() => exec('phonegap', ['build', 'android']))
+  .then(() => exec('cordova', ['build', 'android']))
 }
 
 if (require.main === module) {

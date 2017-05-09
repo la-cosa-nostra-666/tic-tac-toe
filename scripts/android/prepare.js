@@ -7,7 +7,7 @@ const prepare = () => {
   return exec('rm', ['-rf', path.resolve('./www')])
   .then(() => exec('rm', ['-rf', path.resolve('./res')]))
   .then(() => exec('webpack', ['-p']))
-  .then(() => exec('phonegap', ['prepare']))
+  .then(() => exec('cordova', ['prepare']))
   .then(() => copyRes())
 }
 

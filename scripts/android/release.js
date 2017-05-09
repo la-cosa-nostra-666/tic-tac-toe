@@ -10,6 +10,6 @@ if (!process.argv[2]) {
 }
 
 prepare()
-.then(() => exec('phonegap', ['prepare' '--release']))
+.then(() => exec('cordova', ['build', 'android', '--release']))
 .then(() => zipalign())
 .then(() => signAPK(process.argv[2]))
