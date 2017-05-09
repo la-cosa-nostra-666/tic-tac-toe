@@ -1,8 +1,8 @@
-var fse = require('fs-extra')
+const fse = require('fs-extra');
 
 module.exports = () => {
   return new Promise((resolve, reject) => {
-    fse.copy('res', 'platforms/android/res', function (error) {
+    fse.copy('res', 'platforms/android/res', (error) => {
       if (error) {
         return reject(error);
       }
