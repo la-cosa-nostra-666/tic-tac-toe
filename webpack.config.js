@@ -40,13 +40,13 @@ module.exports = {
         use: extractSass.extract({
           use: [
             {
-              loader: "css-loader"
+              loader: "css-loader?sourceMap"
             },
             {
-              loader: 'postcss-loader'
+              loader: 'postcss-loader?sourceMap'
             },
             {
-              loader: 'resolve-url-loader'
+              loader: 'resolve-url-loader?sourceMap'
             },
             {
               loader: "sass-loader?sourceMap"
