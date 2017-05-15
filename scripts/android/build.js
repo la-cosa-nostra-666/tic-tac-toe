@@ -1,6 +1,6 @@
 const path = require('path');
 
-const exec = require('./exec');
+const exec = require('../core/exec');
 const prepare = require('./prepare');
 
 const build = () => {

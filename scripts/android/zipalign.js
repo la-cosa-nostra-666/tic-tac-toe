@@ -1,5 +1,6 @@
 const path = require('path');
-const exec = require('./exec');
+
+const exec = require('../core/exec');
 
 module.exports = () => {
   const alignedAPKPath = path.resolve('./platforms/android/build/outputs/apk/android-release-unsigned-aligned.apk');

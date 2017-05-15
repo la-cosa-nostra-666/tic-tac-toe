@@ -22,7 +22,7 @@
       display: inline-block;
       position: absolute;
       content: '';
-      background-image: url('../img/crown.svg');
+      background-image: url('../img/crown.png');
       width: 150px;
       height: 76px;
       background-size: 100%;
@@ -43,13 +43,13 @@
 
   &.o {
     .winner {
-      background-image: url('../img/o.svg');
+      background-image: url('../img/o.png');
     }
   }
 
   &.x {
     .winner {
-      background-image: url('../img/x.svg');
+      background-image: url('../img/x.png');
     }
   }
 

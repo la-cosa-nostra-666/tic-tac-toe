@@ -1,6 +1,7 @@
 const path = require('path');
+
 const prepare = require('./prepare');
-const exec = require('./exec');
+const exec = require('../core/exec');
 const zipalign = require('./zipalign');
 const signAPK = require('./sign-apk');
 

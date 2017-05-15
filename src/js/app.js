@@ -7,6 +7,7 @@ export default class App {
   container = document.createElement('div');
   gameView = new GameView();
   winnerView = new WinnerView();
+  
   constructor() {
     this.container.classList.add('app');
     this.container.appendChild(this.gameView.container);

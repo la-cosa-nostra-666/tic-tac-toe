@@ -1,5 +1,6 @@
 const path = require('path');
-const exec = require('./exec');
+
+const exec = require('../core/exec');
 
 module.exports = (keystorePath) => {
   return exec('apksigner', [

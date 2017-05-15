@@ -36,15 +36,15 @@
       }
 
       .o {
-        background-image: url('../img/o.svg');
+        background-image: url('../img/o.png');
       }
 
       .x {
-        background-image: url('../img/x.svg');
+        background-image: url('../img/x.png');
       }
 
       .draw {
-        background-image: url('../img/draw.svg');
+        background-image: url('../img/draw.png');
       }
     }
   }
@@ -52,7 +52,7 @@
   .trash {
     display: inline-block;
     float: right;
-    background-image: url('../img/trash.svg');
+    background-image: url('../img/trash.png');
     background-size: 50px;
     height: 100%;
     width: 60px;
