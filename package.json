@@ -4,7 +4,7 @@
     "description": "tic tac toe",
     "main": "www/js/index.js",
     "dependencies": {
-        "cordova-android": "~6.0.0",
+        "cordova-android": "^6.2.3",
         "cordova-plugin-console": "~1.0.2",
         "cordova-plugin-device": "~1.1.1",
         "cordova-plugin-whitelist": "~1.2.1"
